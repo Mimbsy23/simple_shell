@@ -7,13 +7,11 @@
 char **token_func(char *line_read)
 {
 	int j;
-	char *tokens;
-	char **argv;
+	char *tokens = NULL;
+	static char *argv[12000] = {NULL};
 
-	argv = malloc(10 * sizeof(char *));
-	if (!argv)
+	if (!argv[0])
 	{
-		perror("malloc failed to allocate memory");
 		return (NULL);
 	}
 	tokens = strtok(line_read, " \n\t");
@@ -21,22 +19,9 @@ char **token_func(char *line_read)
 
 	while (tokens != NULL)
 	{
-		argv[j] = malloc(sizeof(char) * (strlen(tokens) + 1));
-		if (!argv[j])
-		{
-			perror("malloc failed to allocate memory");
-			free_memo(argv);
-			return (NULL);
-		}
-		strcpy(argv[j], tokens);
+		argv[j] =  tokens;
 		j++;
 		tokens = strtok(NULL, " \n\t");
-	}
-
-	if (j == 0)
-	{
-		free_memo(argv);
-		return (NULL);
 	}
 	argv[j] = NULL;
 	return (argv);

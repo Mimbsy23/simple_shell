@@ -14,7 +14,7 @@ int in_built_cmd(char **argv)
 	}
 	if (strcmp(argv[0], "env") == 0)
 	{
-		env();
+		_env();
 	}
 	if (strcmp(argv[0], "cd") == 0)
 	{
