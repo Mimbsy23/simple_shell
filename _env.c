@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * env-function prints the environmental variables
+ * _env-function prints the environmental variables
  * when called
  */
 
