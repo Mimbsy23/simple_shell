@@ -18,7 +18,6 @@ int main(void)
 		if (isati != 0)
 			line_read = read_lineptr();
 		if (line_read == NULL)
-
 			break;
 
 		argv = token_func(line_read);
@@ -34,5 +33,6 @@ int main(void)
 
 		free(line_read);
 	}
+	free(line_read);
 	return (0);
 }

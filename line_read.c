@@ -19,10 +19,8 @@ char *read_lineptr(void)
 
 	if (num_byte_read == -1)
 	{
-		perror("exiting shell");
 		free(line_read);
-		return (NULL);
+		exit(0);
 	}
-
 	return (line_read);
 }

@@ -38,7 +38,6 @@ char **token_func(char *line_read)
 		free_memo(argv);
 		return (NULL);
 	}
-
 	argv[j] = NULL;
 	return (argv);
 }
