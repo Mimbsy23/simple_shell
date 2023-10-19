@@ -7,16 +7,16 @@
 
 int in_built_cmd(char **argv)
 {
-	if (_strcmp(argv[0], "exit") == 0)
+	if (strcmp(argv[0], "exit") == 0)
 	{
 		exit(0);
 		free_memo(argv);
 	}
-	if (_strcmp(argv[0], "env") == 0)
+	if (strcmp(argv[0], "env") == 0)
 	{
 		env();
 	}
-	if (_strcmp(argv[0], "cd") == 0)
+	if (strcmp(argv[0], "cd") == 0)
 	{
 		if (argv[1] == NULL)
 		{

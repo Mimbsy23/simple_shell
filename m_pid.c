@@ -19,7 +19,7 @@ void my_ppid(char **argv)
 
 		for (f = 0; commands_in_paths[f] != NULL; f++)
 		{
-			if (_strcmp(argv[0], commands_in_paths[f]) == 0)
+			if (strcmp(argv[0], commands_in_paths[f]) == 0)
 			{
 				execve(locate_commands_paths[f], argv, environ);
 				perror("./hsh: no command found");

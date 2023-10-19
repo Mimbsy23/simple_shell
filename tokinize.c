@@ -21,14 +21,14 @@ char **token_func(char *line_read)
 
 	while (tokens != NULL)
 	{
-		argv[j] = malloc(sizeof(char) * (_strlen(tokens) + 1));
+		argv[j] = malloc(sizeof(char) * (strlen(tokens) + 1));
 		if (!argv[j])
 		{
 			perror("malloc failed to allocate memory");
 			free_memo(argv);
 			return (NULL);
 		}
-		_strcpy(argv[j], tokens);
+		strcpy(argv[j], tokens);
 		j++;
 		tokens = strtok(NULL, " \n\t");
 	}

@@ -11,7 +11,7 @@ void env(void)
 
 	for (j = 0; environ[j] != NULL; j++)
 	{
-		write(1, environ[j], _strlen(environ[j]));
+		write(1, environ[j], strlen(environ[j]));
 	}
 	_putchar('\n');
 }
